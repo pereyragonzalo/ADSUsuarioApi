@@ -1,0 +1,6 @@
+@yummyAppUsuarioApi_HostAddress = http://localhost:5078
+
+GET {{yummyAppUsuarioApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
