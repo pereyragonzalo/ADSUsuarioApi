@@ -19,7 +19,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
     // Opcional para Personalizar las opciones de seguridad
     options.Password.RequireDigit = false;
-    options.Password.RequiredLength = 6;
+    options.Password.RequiredLength = 3;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;

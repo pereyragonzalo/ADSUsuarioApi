@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\",
+  "WorkspaceRootPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\aleja\\desktop\\nova pasta (2)\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|f:\\cibertec\\5 ciclo\\modulo2\\desarrolloservicioswebi\\adsusuarioapi\\yummyprojectdsw\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +18,19 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-22T10:24:12.841Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\YummyProjectDSW\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\YummyProjectDSW\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T13:45:48.19Z",
               "EditorCaption": ""
             }
           ]
