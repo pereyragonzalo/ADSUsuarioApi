@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\workspaceNetCore\\ADSUsuarioApi\\",
+  "WorkspaceRootPath": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\workspacenetcore\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\aleja\\desktop\\nova pasta (2)\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\workspaceNetCore\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
               "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
-              "ToolTip": "C:\\workspaceNetCore\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\aleja\\Desktop\\Nova pasta (2)\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
               "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
