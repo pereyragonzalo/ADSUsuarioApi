@@ -1,0 +1,53 @@
+﻿@model yummyApp.Models.Producto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_producto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_producto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_cat_or)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_cat_or)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id_cat_com)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id_cat_com)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="ManProducto" asp-action="ListadoProductos">Back to List</a>
+</div>
