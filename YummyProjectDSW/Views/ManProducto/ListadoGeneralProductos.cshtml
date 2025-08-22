@@ -1,0 +1,111 @@
+﻿@model IEnumerable<yummyApp.Models.ProductoModel>
+
+@{
+    ViewData["Title"] = "Listado de Productos";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary">📦 Lista de Productos</h2>
+        <a asp-action="Create" class="btn btn-success">➕ Nuevo producto</a>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <form asp-action="ListadoGeneralProductos" asp-controller="ManProducto" class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label for="numreg" class="form-label">Cantidad de registros</label>
+                    <input type="number" name="numreg" id="numreg" value="@ViewBag.numreg" min="1" class="form-control" />
+                </div>
+
+                <div class="col-md-4">
+                    <label for="ori" class="form-label">Categoría origen</label>
+                    @Html.DropDownList("ori",
+                             new SelectList(ViewBag.catorigenes, "nombreCategoriaOrigen", "nombreCategoriaOrigen", ViewBag.ori),
+                             "-- Todas los origenes --",
+                             new { @class = "form-select", @id = "ori" })
+                </div>
+
+                <div class="col-md-4">
+                    <label for="come" class="form-label">Categoría comida</label>
+                    @Html.DropDownList("come",
+                             new SelectList(ViewBag.catcomidas, "nombreCategoriaComida", "nombreCategoriaComida", ViewBag.come),
+                             "-- Todas las comidas --",
+                             new { @class = "form-select", @id = "come" })
+                </div>
+
+                <div class="col-md-1 text-end">
+                    <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.id_producto)</th>
+                    <th>@Html.DisplayNameFor(model => model.nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.precio)</th>
+                    <th>@Html.DisplayNameFor(model => model.stock)</th>
+                    <th>@Html.DisplayNameFor(model => model.cat_or)</th>
+                    <th>@Html.DisplayNameFor(model => model.cat_com)</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.id_producto)</td>
+                        <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.precio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.stock)</td>
+                        <td>@Html.DisplayFor(modelItem => item.cat_or)</td>
+                        <td>@Html.DisplayFor(modelItem => item.cat_com)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.id_producto" class="btn btn-sm btn-warning me-1">✏️ Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.id_producto" class="btn btn-sm btn-info me-1">🔍 Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.id_producto"
+                               class="btn btn-sm btn-danger"
+                               onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">
+                                🗑️ Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3">
+        <a asp-controller="Home" asp-action="ManGeneral" class="btn btn-outline-secondary">← Volver</a>
+    </div>
+
+    @if ((int)ViewBag.pags > 1)
+
+    {
+        <div class="mt-4">
+            <nav>
+                <ul class="pagination">
+                    @for (int i = 0; i < (int)ViewBag.pags; i++)
+                    {
+                        <li class="page-item @(i == (int)ViewBag.page ? "active" : "")">
+                            <a class="page-link"
+                               asp-action="ListadoGeneralProductos"
+                               asp-route-ori="@ViewBag.ori"
+                               asp-route-come="@ViewBag.come"
+                               asp-route-numreg="@ViewBag.numreg"
+                               asp-route-page="@i">
+                                @(i + 1)
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    }
+</div>

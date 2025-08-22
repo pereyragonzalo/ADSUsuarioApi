@@ -1,0 +1,66 @@
+﻿@model yummyApp.Models.Producto
+
+@{
+    ViewData["Title"] = "Adicionar producto";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Adicionar un producto</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <input asp-for="id_producto" type="hidden" value="0" />
+
+                <div class="mb-3">
+                    <label asp-for="nombre" class="form-label"></label>
+                    <input asp-for="nombre" class="form-control" />
+                    <span asp-validation-for="nombre" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="precio" class="form-label"></label>
+                    <input asp-for="precio" class="form-control" type="number" step="0.01" min="0" />
+                    <span asp-validation-for="precio" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="stock" class="form-label"></label>
+                    <input asp-for="stock" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="stock" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="id_cat_or" class="form-label">Selecciona la categoria origen</label>
+                    <select asp-for="id_cat_or" asp-items="ViewBag.catorigenes" asp-option-label="-- seleccionar --" class="form-control"></select>
+                    <span asp-validation-for="id_cat_or" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="id_cat_com" class="form-label">Selecciona la categoria comida</label>
+                    <select asp-for="id_cat_com" asp-items="ViewBag.catcomidas" asp-option-label="-- seleccionar --" class="form-control"></select>
+                    <span asp-validation-for="id_cat_com" class="text-danger small"></span>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Crear producto</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            @ViewBag.mensaje
+            <div class="mt-2">
+                <a asp-controller="ManProducto" asp-action="ListadoGeneralProductos" class="btn btn-outline-secondary">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

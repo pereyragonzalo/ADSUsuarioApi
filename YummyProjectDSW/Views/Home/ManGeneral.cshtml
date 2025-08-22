@@ -1,0 +1,38 @@
+﻿﻿@{
+    ViewData["Title"] = "Mantenimiento General";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+            <h4 class="text-white">⚙️ Mantenimiento general de la aplicación</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead">Sea bienvenido(a), seleccione el tipo de información que desea editar:</p>
+
+            <div class="list-group">
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    👤 Mantenimiento de usuario
+                </a>
+                <a asp-controller="ManProducto" asp-action="ListadoGeneralProductos" class="list-group-item list-group-item-action">
+                    📦 Mantenimiento de producto
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🧾 Mantenimiento de ventas
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    📋 Mantenimiento de los detalles de las ventas
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🌍 Mantenimiento de la categoría Origen
+                </a>
+                <a asp-action="" class="list-group-item list-group-item-action">
+                    🍽️ Mantenimiento de la categoría Comida
+                </a>
+            </div>
+        </div>
+        <div class="card-footer text-muted text-end">
+            <small>Panel administrativo • Última actualización: @DateTime.Now.ToString("dd/MM/yyyy")</small>
+        </div>
+    </div>
+</div>
