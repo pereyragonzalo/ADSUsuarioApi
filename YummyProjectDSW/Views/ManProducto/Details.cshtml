@@ -1,0 +1,61 @@
+﻿@model yummyApp.Models.Producto
+
+@{
+    ViewData["Title"] = "Detalles del producto";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">🔍 Detalles del producto</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.id_producto)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.id_producto)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.nombre)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.precio)
+                </dt>
+                <dd class="col-sm-9">
+                    R$ @Html.DisplayFor(model => model.precio)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.stock)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.stock) unidades
+                </dd>
+
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.id_cat_or)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.id_cat_or)
+                </dd>
+
+                <dt class="col-sm-3 fw-bold text-secondary">
+                    @Html.DisplayNameFor(model => model.id_cat_com)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.id_cat_com)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-controller="ManProducto" asp-action="ListadoGeneralProductos" class="btn btn-outline-secondary">← Volver al listado</a>
+        </div>
+    </div>
+</div>
