@@ -4,8 +4,6 @@ go
 use bdAppYummy
 go
 
--- Se eliminan las tablas de usuario y roles personalizadas para dar paso a ASP.NET Core Identity
-
 -- Tabla: CategoriaComida
 CREATE TABLE CategoriaComida (
     idCategoriaComida INT PRIMARY KEY IDENTITY(1,1),
@@ -36,11 +34,9 @@ CREATE TABLE Producto (
 -- Tabla: Venta
 CREATE TABLE Venta (
     idVenta INT PRIMARY KEY IDENTITY(1,1),
-    idUsuario NVARCHAR(450) NOT NULL, -- Cambiado a NVARCHAR(450) para referenciar el Id de AspNetUsers
+    idUsuario NVARCHAR(450) NOT NULL, -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers
     fechaVenta DATETIME DEFAULT GETDATE(),
     estado int NOT NULL,
-    -- La clave foránea se agregará después de que Identity cree la tabla AspNetUsers
-    -- ALTER TABLE Venta ADD CONSTRAINT FK_Venta_Usuario FOREIGN KEY (idUsuario) REFERENCES AspNetUsers(Id);
 );
 
 -- Tabla: DetalleVenta
@@ -56,9 +52,6 @@ CREATE TABLE DetalleVenta (
     FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
 )
 go
-
--- Se eliminan las tablas de usuario y roles, por ende, sus valores por defecto
--- y las inserciones ya no son necesarias
 
 -- CategoriaComida
 ALTER TABLE CategoriaComida
@@ -252,4 +245,14 @@ as
 select * from CategoriaOrigen
 where estado = 1
 go
+
+--Proc Gonzalo
+create or alter proc ListarUsuarios
+as
+BEGIN
+	select Id, Email from AspNetUsers
+	order by Email;
+end;
+go
+
 
