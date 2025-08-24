@@ -1,38 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\",
+  "WorkspaceRootPath": "C:\\workspaceNetCore\\ADSUsuarioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyprojectdsw\\views\\carrito\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\carrito\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyprojectdsw\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\models\\carritoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\models\\carritoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\database\\carritotables.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\database\\carritotables.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\workspacenetcore\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|c:\\users\\gaby\\documents\\cibertec\\proyectosw24-08\\yummyappusuarioapi\\database\\carritotables.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\database\\carritotables.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\workspacenetcore\\adsusuarioapi\\yummyprojectdsw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,100 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Checkout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\YummyProjectDSW\\Views\\Carrito\\Checkout.cshtml",
-              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\Carrito\\Checkout.cshtml",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\YummyProjectDSW\\Views\\Carrito\\Checkout.cshtml*",
-              "RelativeToolTip": "YummyProjectDSW\\Views\\Carrito\\Checkout.cshtml*",
-              "ViewState": "AgIAADABAAAAhpmZmRkmwEABAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-24T14:41:47.289Z",
-              "EditorCaption": ""
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\YummyProjectDSW\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "YummyProjectDSW\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\YummyProjectDSW\\Controllers\\CarritoController.cs*",
-              "RelativeToolTip": "YummyProjectDSW\\Controllers\\CarritoController.cs*",
-              "ViewState": "AgIAABgBAAAAamZmZuYtwH4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T14:29:34.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CarritoItem.cs",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Models\\CarritoItem.cs",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\Models\\CarritoItem.cs",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Models\\CarritoItem.cs",
-              "RelativeToolTip": "yummyAppUsuarioApi\\Models\\CarritoItem.cs",
-              "ViewState": "AgIAADcAAACAmZmZmRkswAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T14:29:00.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CarritoTables.sql ",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\database\\CarritoTables.sql",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\database\\CarritoTables.sql",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\database\\CarritoTables.sql",
-              "RelativeToolTip": "yummyAppUsuarioApi\\database\\CarritoTables.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-08-24T14:28:37.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReportesController.cs",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Controllers\\ReportesController.cs",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\Controllers\\ReportesController.cs",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Controllers\\ReportesController.cs",
-              "RelativeToolTip": "yummyAppUsuarioApi\\Controllers\\ReportesController.cs",
-              "ViewState": "AgIAAFgAAAAAAQAAAAAZwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T14:28:26.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\Controllers\\CarritoController.cs",
-              "RelativeToolTip": "yummyAppUsuarioApi\\Controllers\\CarritoController.cs",
-              "ViewState": "AgIAAMAAAAAAwMzMzMwKwNUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T14:27:28.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\Gaby\\Documents\\CIBERTEC\\proyectosw24-08\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\workspaceNetCore\\ADSUsuarioApi\\YummyProjectDSW\\appsettings.json",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\appsettings.json",
+              "ToolTip": "C:\\workspaceNetCore\\ADSUsuarioApi\\YummyProjectDSW\\appsettings.json*",
+              "RelativeToolTip": "YummyProjectDSW\\appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-22T15:59:05.709Z",
+              "WhenOpened": "2025-08-24T15:35:06.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\workspaceNetCore\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
+              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
+              "ToolTip": "C:\\workspaceNetCore\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
+              "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-24T15:34:44.143Z",
               "EditorCaption": ""
             }
           ]
