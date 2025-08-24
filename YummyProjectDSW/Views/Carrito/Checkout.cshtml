@@ -1,0 +1,330 @@
+@model dynamic
+@{
+    ViewData["Title"] = "Checkout - Carrito";
+    var carrito = ViewBag.Carrito as yummyApp.Controllers.CarritoCompletoDto;
+    var idUsuario = ViewBag.IdUsuario as string;
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="fa fa-shopping-cart"></i> Mi Carrito de Compras
+                    </h3>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">
+                            <i class="fa fa-exclamation-triangle"></i> @ViewBag.Error
+                        </div>
+                    }
+
+                    @if (carrito?.Items != null && carrito.Items.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th class="text-center">Precio Unitario</th>
+                                        <th class="text-center">Cantidad</th>
+                                        <th class="text-center">Subtotal</th>
+                                        <th class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in carrito.Items)
+                                    {
+                                        <tr data-producto-id="@item.IdProducto">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="mr-3">
+                                                        <i class="fa fa-utensils fa-2x text-primary"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-0">@item.NombreProducto</h6>
+                                                        <small class="text-muted">ID: @item.IdProducto</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="badge badge-info">$@item.PrecioUnitario.ToString("N2")</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="input-group input-group-sm" style="max-width: 120px;">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary btn-cantidad" type="button" data-action="decrease">
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                    <input type="number" class="form-control text-center cantidad-input" 
+                                                           value="@item.Cantidad" min="1" max="99" 
+                                                           data-carrito-item-id="@item.Id">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary btn-cantidad" type="button" data-action="increase">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="badge badge-success subtotal-item">$@item.Subtotal.ToString("N2")</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-danger btn-sm btn-eliminar" 
+                                                        data-carrito-item-id="@item.Id" 
+                                                        title="Eliminar item">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="fa fa-info-circle"></i> Resumen del Pedido
+                                        </h5>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Total de Items:</span>
+                                            <strong class="total-items">@carrito.TotalItems</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Total a Pagar:</span>
+                                            <strong class="text-primary total-general">$@carrito.Total.ToString("N2")</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12 text-center">
+                                <button class="btn btn-danger btn-lg mr-3" id="btn-limpiar-carrito">
+                                    <i class="fa fa-trash"></i> Limpiar Carrito
+                                </button>
+                                <button class="btn btn-success btn-lg" id="btn-checkout">
+                                    <i class="fa fa-credit-card"></i> Proceder al Checkout
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="fa fa-shopping-cart fa-5x text-muted mb-4"></i>
+                            <h4 class="text-muted">Tu carrito está vacío</h4>
+                            <p class="text-muted">Agrega algunos productos para continuar con tu compra.</p>
+                            <a href="@Url.Action("Menu", "Home")" class="btn btn-primary btn-lg">
+                                <i class="fa fa-utensils"></i> Ver Menú
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            let carritoActual = @Html.Raw(Json.Serialize(carrito));
+
+            function actualizarInterfazCarrito(carrito) {
+                if (carrito && carrito.Items) {
+                    carrito.Items.forEach(function(item) {
+                        const row = $(`tr[data-producto-id="${item.IdProducto}"]`);
+                        if (row.length) {
+                            row.find('.cantidad-input').val(item.Cantidad);
+                            row.find('.subtotal-item').text('$' + item.Subtotal.toFixed(2));
+                        }
+                    });
+                    
+                    $('.total-items').text(carrito.TotalItems || 0);
+                    $('.total-general').text('$' + (carrito.Total || 0).toFixed(2));
+                    
+                    if (!carrito.Items || carrito.Items.length === 0) {
+                        location.reload();
+                    }
+                }
+            }
+            
+            function recalcularTotales() {
+                let totalItems = 0;
+                let totalGeneral = 0;
+                
+                $('.cantidad-input').each(function() {
+                    const cantidad = parseInt($(this).val()) || 0;
+                    const row = $(this).closest('tr');
+                    const precioUnitario = parseFloat(row.find('.badge-info').text().replace('$', '')) || 0;
+                    const subtotal = precioUnitario * cantidad;
+                    
+                    totalItems += cantidad;
+                    totalGeneral += subtotal;
+                    
+                    row.find('.subtotal-item').text('$' + subtotal.toFixed(2));
+                });
+                
+                $('.total-items').text(totalItems);
+                $('.total-general').text('$' + totalGeneral.toFixed(2));
+            }
+
+            function mostrarNotificacion(mensaje, tipo = 'success') {
+                $('.alert').remove();
+                
+                const alertClass = tipo === 'success' ? 'alert-success' : 'alert-danger';
+                const icon = tipo === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle';
+                
+                const alert = $(`
+                    <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
+                        <i class="fa ${icon}"></i> ${mensaje}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                `);
+                
+                $('.card-body').prepend(alert);
+                
+                setTimeout(function() {
+                    alert.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                }, 5000);
+            }
+
+            $('.cantidad-input').on('change', function() {
+                const idCarritoItem = $(this).data('carrito-item-id');
+                const nuevaCantidad = parseInt($(this).val());
+                
+                if (nuevaCantidad < 1) {
+                    $(this).val(1);
+                    return;
+                }
+                
+                const row = $(this).closest('tr');
+                const precioUnitario = parseFloat(row.find('.badge-info').text().replace('$', ''));
+                const subtotal = precioUnitario * nuevaCantidad;
+                row.find('.subtotal-item').text('$' + subtotal.toFixed(2));
+                
+                $.post('/Carrito/ActualizarCantidad', {
+                    idCarritoItem: idCarritoItem,
+                    nuevaCantidad: nuevaCantidad
+                })
+                .done(function(response) {
+                    if (response.success) {
+                        carritoActual = response.carrito;
+                        actualizarInterfazCarrito(carritoActual);
+                        mostrarNotificacion('Cantidad actualizada correctamente');
+                    } else {
+                        mostrarNotificacion(response.message, 'error');
+                    }
+                })
+                .fail(function() {
+                    mostrarNotificacion('Error al actualizar cantidad', 'error');
+                });
+            });
+
+            $('.btn-cantidad').on('click', function() {
+                const input = $(this).closest('.input-group').find('.cantidad-input');
+                const action = $(this).data('action');
+                let valor = parseInt(input.val());
+                
+                if (action === 'increase') {
+                    valor = Math.min(valor + 1, 99);
+                } else {
+                    valor = Math.max(valor - 1, 1);
+                }
+                
+                input.val(valor);
+                
+                recalcularTotales();
+                
+                input.trigger('change');
+            });
+
+            $('.btn-eliminar').on('click', function() {
+                const idCarritoItem = $(this).data('carrito-item-id');
+                const row = $(this).closest('tr');
+                
+                if (confirm('¿Estás seguro de que quieres eliminar este producto del carrito?')) {
+                    $.post('/Carrito/EliminarItem', {
+                        idCarritoItem: idCarritoItem
+                    })
+                    .done(function(response) {
+                        if (response.success) {
+                            carritoActual = response.carrito;
+                            
+                            row.fadeOut(300, function() {
+                                $(this).remove();
+                                
+                                actualizarInterfazCarrito(carritoActual);
+                                
+                                if (!carritoActual.Items || carritoActual.Items.length === 0) {
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 500);
+                                }
+                            });
+                            
+                            mostrarNotificacion('Producto eliminado del carrito');
+                        } else {
+                            mostrarNotificacion(response.message, 'error');
+                        }
+                    })
+                    .fail(function() {
+                        mostrarNotificacion('Error al eliminar producto', 'error');
+                    });
+                }
+            });
+
+            $('#btn-limpiar-carrito').on('click', function() {
+                if (confirm('¿Estás seguro de que quieres limpiar todo el carrito?')) {
+                    $.post('/Carrito/LimpiarCarrito')
+                    .done(function(response) {
+                        if (response.success) {
+                            carritoActual = { Items: [], Total: 0, TotalItems: 0 };
+                            
+                            actualizarInterfazCarrito(carritoActual);
+                            
+                            mostrarNotificacion('Carrito limpiado correctamente');
+                            
+                            setTimeout(function() {
+                                location.reload();
+                            }, 1500);
+                        } else {
+                            mostrarNotificacion(response.message, 'error');
+                        }
+                    })
+                    .fail(function() {
+                        mostrarNotificacion('Error al limpiar carrito', 'error');
+                    });
+                }
+            });
+
+            $('#btn-checkout').on('click', function() {
+                $.post('/Carrito/ProcesarCheckout')
+                .done(function(response) {
+                    if (response.success) {
+                        mostrarNotificacion('Checkout preparado correctamente. Redirigiendo a ventas...');
+                        console.log('Modelo de venta preparado:', response.modeloVenta);
+                    } else {
+                        mostrarNotificacion(response.message, 'error');
+                    }
+                })
+                .fail(function() {
+                    mostrarNotificacion('Error al procesar checkout', 'error');
+                });
+            });
+        });
+    </script>
+}
