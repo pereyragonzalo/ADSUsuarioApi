@@ -34,8 +34,9 @@ CREATE TABLE Producto (
 -- Tabla: Venta
 CREATE TABLE Venta (
     idVenta INT PRIMARY KEY IDENTITY(1,1),
-    idUsuario NVARCHAR(450) NOT NULL, -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers
+    idUsuario NVARCHAR(450), -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers. En la version final dejarlo como NOT NULL
     fechaVenta DATETIME DEFAULT GETDATE(),
+	total decimal(10,2),
     estado int NOT NULL,
 );
 
@@ -254,5 +255,36 @@ BEGIN
 	order by Email;
 end;
 go
+
+create or alter proc registrar_venta
+@precio decimal(10,2)
+as
+begin
+	select*from venta;
+end;
+go
+
+create or alter proc alterar_producto
+@id int,
+@cantidad int
+as
+begin
+	select*from venta;
+end;
+go
+
+create or alter proc registrar_detalles_venta
+@id int,
+@cantidad int,
+@precio decimal(10,2),
+@subtotal decimal(10,2)
+as
+begin
+	insert into DetalleVenta (idProducto, cantidad, precioProd, subtotal)
+	values(@id,@cantidad,@precio, @subtotal)
+end;
+go
+
+
 
 

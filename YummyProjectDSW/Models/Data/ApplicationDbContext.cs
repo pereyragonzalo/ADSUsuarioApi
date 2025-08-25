@@ -33,4 +33,6 @@ public class ApplicationDbContext : IdentityDbContext
             .Property(d => d.precioProd)
             .HasPrecision(10, 2);
     }
+
+public DbSet<yummyApp.Models.ProductoCarrito> ProductoCarrito { get; set; } = default!;
 }
