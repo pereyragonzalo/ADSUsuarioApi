@@ -34,7 +34,7 @@ CREATE TABLE Producto (
 -- Tabla: Venta
 CREATE TABLE Venta (
     idVenta INT PRIMARY KEY IDENTITY(1,1),
-    idUsuario NVARCHAR(450) NOT NULL, -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers
+    idUsuario NVARCHAR(450), -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers. En la version final dejarlo como NOT NULL
     fechaVenta DATETIME DEFAULT GETDATE(),
     estado int NOT NULL,
 );
@@ -103,13 +103,12 @@ VALUES
 ('Pizza Margarita', 25.00, 15, 1, 2)
 go
 
-INSERT INTO Venta (idUsuario) VALUES 
-('user1'),
-('user2'),
-('user3'),
-('user4'),
-('user5')
-go
+INSERT INTO Venta (idUsuario) VALUES
+('8980f024-b071-4f82-81f8-86374d0c029a'),
+('8980f024-b071-4f82-81f8-86374d0c029b'),
+('8980f024-b071-4f82-81f8-86374d0c029c'),
+('8980f024-b071-4f82-81f8-86374d0c029a') 
+GO
 
 INSERT INTO DetalleVenta (idVenta, idProducto, cantidad, precioProd)
 VALUES 
@@ -255,4 +254,163 @@ BEGIN
 end;
 go
 
+create or alter proc registrar_venta
+@precio decimal(10,2)
+as
+begin
+	select*from venta;
+end;
+go
 
+create or alter proc alterar_producto
+@id int,
+@cantidad int
+as
+begin
+	select*from venta;
+end;
+go
+
+create or alter proc registrar_detalles_venta
+@id int,
+@cantidad int,
+@precio decimal(10,2),
+@subtotal decimal(10,2)
+as
+begin
+	insert into DetalleVenta (idProducto, cantidad, precioProd, subtotal)
+	values(@id,@cantidad,@precio, @subtotal)
+end;
+go
+
+
+-----------------------------------------
+
+-- proc Jacobo
+
+
+
+USE [bdAppYummy]
+GO
+
+
+CREATE or alter PROC [dbo].[ListarVentas]
+AS
+SELECT 
+	V.*, 
+	A.UserName AS Usuario
+
+FROM Venta V 
+INNER JOIN AspNetUsers A ON V.idUsuario = A.Id
+WHERE estado=1
+go
+
+
+
+------------------------------------------------------
+CREATE or alter PROC [dbo].[ObtenerVentaPorID]
+(
+    @Id INT
+)
+AS
+BEGIN
+    SELECT 
+        V.idVenta, 
+        V.idUsuario, 
+        V.fechaVenta, 
+        V.estado,
+        A.UserName AS Usuario 
+    FROM Venta V
+    INNER JOIN AspNetUsers A ON V.idUsuario = A.Id  
+    WHERE V.idVenta = @Id
+END
+go
+
+
+
+-------------------------------------------------------
+
+CREATE or alter PROC [dbo].[RegistrarVenta]
+(
+    @idUsuario VARCHAR(450),
+    @fechaVenta Datetime
+)
+AS
+BEGIN
+    INSERT INTO Venta (idUsuario, fechaVenta, estado)
+    VALUES (@idUsuario, @fechaVenta, 1)
+
+    SELECT SCOPE_IDENTITY()
+END
+go
+-----------------------------------------------------
+
+CREATE or alter PROC [dbo].[ActualizarVentas]
+(
+	@Id INT,
+	@idUsuario VARCHAR(450),
+	@fechaVenta Datetime
+)
+AS
+UPDATE Venta
+SET 
+	idUsuario = @idUsuario
+	--fechaVenta = @fechaVenta
+WHERE idVenta = @Id
+go
+
+--------------------------------------------------------
+
+CREATE or alter PROC [dbo].[EliminarVenta]
+(
+	@id INT
+)
+AS
+UPDATE Venta
+SET Estado = 0
+WHERE idVenta = @id
+go
+
+--------------------------------------------------------
+----- OJOOOOOOOO ELIMINAR
+
+-----------------------------------------------------------
+-- ELIMINAR CUANDO EXISTA AspNetUsers
+
+--CREATE TABLE Usuario (
+--    Id NVARCHAR(450) PRIMARY KEY,
+--    UserName NVARCHAR(256) NOT NULL,
+--    Email NVARCHAR(256) NOT NULL
+--);
+
+
+--INSERT INTO Usuario (Id, UserName, Email) VALUES
+--('user1', 'jlopez', 'jlopez@example.com'),
+--('user2', 'mrojas', 'mrojas@example.com'),
+--('user3', 'acastro', 'acastro@example.com'),
+--('user4', 'pfernandez', 'pfernandez@example.com'),
+--('user5', 'dvalverde', 'dvalverde@example.com');
+
+
+CREATE or alter PROC [dbo].[ListarUsuariosVentas]
+AS
+BEGIN
+	select
+		Id, 
+		UserName
+	from AspNetUsers
+END
+go
+
+
+create or ALTER PROCEDURE [dbo].[ObtenerUsuarioPorID]
+(
+    @Id NVARCHAR(450)
+)
+AS
+BEGIN
+    SELECT Id, UserName, Email
+    FROM AspNetUsers
+    WHERE Id = @Id
+END
+go

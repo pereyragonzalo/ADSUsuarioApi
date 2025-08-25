@@ -1,45 +1,43 @@
 ﻿@model yummyApp.Models.Venta
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar Venta";
 }
 
-<h1>Eliminar venta</h1>
+<div class="container mt-5">
+    <h1 class="mb-4 display-6 fw-bold text-danger">Eliminar Venta</h1>
 
-<h3>¿Estás seguro que deseas eliminar el registro?</h3>
-<div>
-    <h4>Venta</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            ID Usuario
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.idUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            Fecha de venta
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fechaVenta)
-        </dd>
-        <dt class = "col-sm-2">
-            Estado
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.estado)
-        </dd>
-        <dt class = "col-sm-2">
-            Usuario
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.usuario)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
+    <div class="alert alert-warning">
+        <h5 class="mb-2">¿Estás seguro que deseas eliminar este registro?</h5>
+        <p class="mb-0">Esta acción no se puede deshacer.</p>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header bg-light fw-bold">Detalles de la Venta</div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3">ID Usuario</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.idUsuario)</dd>
+
+                <dt class="col-sm-3">Fecha de Venta</dt>
+                <dd class="col-sm-9">@Model.fechaVenta.ToString("dd/MM/yyyy HH:mm:ss")</dd>
+
+                <dt class="col-sm-3">Estado</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.estado)</dd>
+
+                <dt class="col-sm-3">Nombre de Usuario</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.usuario)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete" class="d-flex justify-content-between">
         <input type="hidden" asp-for="idVenta" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Regresart</a>
+        <button type="submit" class="btn btn-danger px-4">
+            Eliminar
+        </button>
+        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+            Cancelar
+        </a>
     </form>
 </div>
