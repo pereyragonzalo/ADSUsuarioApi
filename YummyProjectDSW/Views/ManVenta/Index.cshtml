@@ -1,0 +1,97 @@
+﻿@model IEnumerable<yummyApp.Models.Venta>
+
+@{
+    ViewData["Title"] = "Ventas";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4 display-6 fw-bold text-primary">Gestión de Ventas</h1>
+
+    <form method="get" class="row g-3 align-items-end mb-4">
+        <div class="col-md-3">
+            <label for="codUsuario" class="form-label">ID Usuario</label>
+            <input list="listaCodUsuarios" name="codUsuario" id="codUsuario" class="form-control" placeholder="Escribir / Seleccionar" value="@ViewBag.codUsuarioSeleccionado" />
+            <datalist id="listaCodUsuarios">
+                @foreach (var item in ViewBag.ListadoIds as List<string>)
+                {
+                    <option value="@item"></option>
+                }
+            </datalist>
+        </div>
+
+        <div class="col-md-3">
+            <label for="usuario" class="form-label">Nombre Usuario</label>
+            <input list="listaUsuarios" name="usuario" id="usuario" class="form-control" placeholder="Escribir / Seleccionar" value="@ViewBag.usuarioSeleccionado" />
+            <datalist id="listaUsuarios">
+                @foreach (var item in ViewBag.ListadoUsuarios as List<string>)
+                {
+                    <option value="@item"></option>
+                }
+            </datalist>
+        </div>
+
+        <div class="col-md-3">
+            <label for="fecha" class="form-label">Fecha Venta</label>
+            <input type="date" name="fecha" id="fecha" value="@ViewBag.fechaSeleccionada" class="form-control" />
+        </div>
+
+        <div class="col-md-3 d-flex gap-2">
+            <button type="submit" class="btn btn-outline-danger w-100">Filtrar</button>
+            <a asp-action="Create" class="btn btn-primary w-100">Agregar Venta</a>
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>ID Venta</th>
+                    <th>ID Usuario</th>
+                    <th>Fecha</th>
+                    <th>Nombre de Usuario</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.idVenta</td>
+                        <td>@item.idUsuario</td>
+                        <td>@item.fechaVenta.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        <td>@item.usuario</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.idVenta" class="btn btn-sm btn-warning me-1">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.idVenta" class="btn btn-sm btn-info me-1">Detalle</a>
+                            <a asp-action="Delete" asp-route-id="@item.idVenta" class="btn btn-sm btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (ViewBag.totalPaginas > 1)
+    {
+        <div class="d-flex justify-content-center mt-4">
+            <nav>
+                <ul class="pagination pagination-sm">
+                    @for (int x = 1; x <= ViewBag.totalPaginas; x++)
+                    {
+                        <li class="page-item @(x == ViewBag.paginaActual ? "active" : "")">
+                            <a class="page-link"
+                               asp-action="Index"
+                               asp-route-page="@x"
+                               asp-route-numreg="@ViewBag.numRegistroSeleccionado"
+                               asp-route-codUsuario="@ViewBag.codUsuarioSeleccionado"
+                               asp-route-usuario="@ViewBag.usuarioSeleccionado"
+                               asp-route-fecha="@ViewBag.fechaSeleccionada">
+                                @x
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    }
+</div>

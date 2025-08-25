@@ -1,0 +1,68 @@
+﻿@model yummyApp.Models.Venta
+
+@{
+    ViewData["Title"] = "Editar Venta";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4 display-6 fw-bold text-primary">Editar Venta</h1>
+    <hr />
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                @Html.HiddenFor(model => model.idVenta)
+
+                <div class="mb-3">
+                    <label for="idUsuario" class="form-label">ID Usuario</label>
+                    <select asp-for="idUsuario" class="form-select" asp-items="ViewBag.ListadoUsuarios" required>
+                        <option value="">--Seleccione Usuario--</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Nombre de Usuario</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" value="@Model.usuario" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label for="fechaVenta" class="form-label">Fecha de Venta</label>
+                    <input type="datetime-local" id="fechaVenta" name="fechaVenta" class="form-control"
+                           value="@Model.fechaVenta.ToString("yyyy-MM-ddTHH:mm:ss")" readonly />
+                </div>
+
+                @* Si deseas mostrar el estado, descomenta estas líneas
+                <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <input type="number" id="estado" name="estado" class="form-control" value="@Model.estado" readonly />
+                </div>
+                *@
+
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <button type="submit" class="btn btn-success px-4">Guardar</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const usuarios = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.UsuariosJson));
+
+        document.querySelector('select[name="idUsuario"]').addEventListener('change', function () {
+            const seleccionado = this.value;
+            const usuario = usuarios.find(u => u.idUsuario === seleccionado);
+            document.getElementById('usuario').value = usuario ? usuario.userName : '';
+        });
+
+        window.onload = function () {
+            const select = document.querySelector('select[name="idUsuario"]');
+            const usuario = usuarios.find(u => u.idUsuario === select.value);
+            document.getElementById('usuario').value = usuario ? usuario.userName : '';
+        };
+    </script>
+}
