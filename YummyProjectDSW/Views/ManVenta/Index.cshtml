@@ -1,0 +1,107 @@
+﻿@model IEnumerable<yummyApp.Models.Venta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ventas</h1>
+
+<form method="get" class="row g-3 align-items-end mb-4">
+    <div class="col-md-2">
+        <label for="codUsuario" class="form-label">ID Usuario</label>
+        <input list="listaCodUsuarios" name="codUsuario" id="codUsuario" class="form-control" placeholder="Escribir / Seleccionar" value="@ViewBag.codUsuarioSeleccionado" />
+        <datalist id="listaCodUsuarios">
+            @foreach (var item in ViewBag.ListadoIds as List<string>)
+            {
+                <option value="@item"></option>
+            }
+        </datalist>
+    </div>
+
+    <div class="col-md-2">
+        <label for="usuario" class="form-label">Nombre Usuario</label>
+        <input list="listaUsuarios" name="usuario" id="usuario" class="form-control" placeholder="Escribir / Seleccionar" value="@ViewBag.usuarioSeleccionado" />
+        <datalist id="listaUsuarios">
+            @foreach (var item in ViewBag.ListadoUsuarios as List<string>)
+            {
+                <option value="@item"></option>
+            }
+        </datalist>
+    </div>
+
+    <div class="col-md-2">
+        <label for="fecha" class="form-label">Fecha Venta</label>
+        <input type="date" name="fecha" id="fecha" value="@ViewBag.fechaSeleccionada" class="form-control" />
+    </div>
+
+    <div class="col-md-2 mb-1 d-flex align-items-end">
+        <button type="submit" class="btn btn-danger w-100 py-2">Filtrar</button>
+    </div>
+
+    <div class="col-md-2 mb-1 d-flex align-items-end">
+        <a asp-action="Create" class="btn btn-primary w-100 py-2">Agregar Venta</a>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Venta</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            @* <th>Estado</th> *@
+            <th>Nombre de Usuario</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idUsuario)
+                </td>
+                <td>
+                    @item.fechaVenta.ToString("dd/MM/yyyy HH:mm:ss")
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td> *@
+                <td>
+                    @item.usuario</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idVenta">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.idVenta">Detalle</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idVenta">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewBag.totalPaginas > 1)
+{
+    <div class="d-flex justify-content-center mt-3">
+        <nav>
+            <ul class="pagination pagination-sm">
+                @for (int x = 1; x <= ViewBag.totalPaginas; x++)
+                {
+                    <li class="page-item @(x == ViewBag.paginaActual ? "active" : "")">
+                        <a class="page-link"
+                           asp-action="Index"
+                           asp-route-page="@x"
+                           asp-route-numreg="@ViewBag.numRegistroSeleccionado"
+                           asp-route-codUsuario="@ViewBag.codUsuarioSeleccionado"
+                           asp-route-usuario="@ViewBag.usuarioSeleccionado"
+                           asp-route-fecha="@ViewBag.fechaSeleccionada">
+                            @x
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+}

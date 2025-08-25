@@ -1,0 +1,67 @@
+﻿@model yummyApp.Models.Venta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Venta</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @Html.HiddenFor(model => model.idVenta)
+
+            <div class="form-group mt-3">
+                <label for="idUsuario">ID Usuario</label>
+                <select asp-for="idUsuario" class="form-control" asp-items="ViewBag.ListadoUsuarios" required>
+                    <option value="">--Seleccione Usuario--</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" class="form-control" value="@Model.usuario" readonly />
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="fechaVenta">Fecha de Venta</label>
+                <input type="datetime-local" id="fechaVenta" name="fechaVenta" class="form-control"
+                       value="@Model.fechaVenta.ToString("yyyy-MM-ddTHH:mm:ss")" readonly />
+            </div>
+
+            @* <div class="form-group mt-3">
+                <label for="estado">Estado</label>
+                <input type="number" id="estado" name="estado" class="form-control" value="@Model.estado" readonly />
+            </div> *@
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-action="Index" class="btn btn-link">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const usuarios = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.UsuariosJson));
+
+        document.querySelector('select[name="idUsuario"]').addEventListener('change', function () {
+            const seleccionado = this.value;
+            const usuario = usuarios.find(u => u.idUsuario === seleccionado);
+            document.getElementById('usuario').value = usuario ? usuario.userName : '';
+        });
+
+        window.onload = function () {
+            const select = document.querySelector('select[name="idUsuario"]');
+            const usuario = usuarios.find(u => u.idUsuario === select.value);
+            document.getElementById('usuario').value = usuario ? usuario.userName : '';
+        };
+    </script>
+}
+
+

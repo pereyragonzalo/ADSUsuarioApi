@@ -1,10 +1,98 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\",
+  "WorkspaceRootPath": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|f:\\cibertec\\5 ciclo\\modulo2\\desarrolloservicioswebi\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\controllers\\manventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\controllers\\manventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\data\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\data\\usuariorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\data\\contrato\\iventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\data\\contrato\\iventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\data\\contrato\\iusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\data\\contrato\\iusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\dto\\ventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\dto\\ventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\dto\\actualizarventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\dto\\actualizarventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\dto\\registroventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\dto\\registroventadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\controllers\\mantventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\controllers\\mantventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyappventaapi\\data\\ventarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42483413-880B-458E-B48C-E9B23FBE02B2}|yummyAppVentaApi\\yummyAppVentaApi.csproj|solutionrelative:yummyappventaapi\\data\\ventarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\views\\manventa\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\manventa\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\views\\manventa\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\manventa\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\views\\manventa\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\manventa\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\views\\manventa\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\manventa\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\views\\manventa\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\views\\manventa\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|c:\\users\\jacobo\\desktop\\yummy ultimo\\adsusuarioapi\\yummyprojectdsw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,25 +101,314 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 562,
+          "SelectedChildIndex": 9,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VentaRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\VentaRepositorio.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Data\\VentaRepositorio.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\VentaRepositorio.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Data\\VentaRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:17:10.299Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MantVentasController.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Controllers\\MantVentasController.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Controllers\\MantVentasController.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Controllers\\MantVentasController.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Controllers\\MantVentasController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:08:49.895Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegistroVentaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\RegistroVentaDTO.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\DTO\\RegistroVentaDTO.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\RegistroVentaDTO.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\DTO\\RegistroVentaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T06:50:12.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Models\\Usuario.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T06:41:50.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Models\\Venta.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Models\\Venta.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Models\\Venta.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Models\\Venta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T06:34:16.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ActualizarVentaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\ActualizarVentaDTO.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\DTO\\ActualizarVentaDTO.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\ActualizarVentaDTO.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\DTO\\ActualizarVentaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:54:24.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VentaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\VentaDTO.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\DTO\\VentaDTO.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\DTO\\VentaDTO.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\DTO\\VentaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:52:33.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\Contrato\\IUsuario.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Data\\Contrato\\IUsuario.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\Contrato\\IUsuario.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Data\\Contrato\\IUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:17:52.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IVenta.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\Contrato\\IVenta.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Data\\Contrato\\IVenta.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\Contrato\\IVenta.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Data\\Contrato\\IVenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:17:46.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\UsuarioRepositorio.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Data\\UsuarioRepositorio.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Data\\UsuarioRepositorio.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Data\\UsuarioRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:17:25.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:16:27.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Program.cs",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\Program.cs",
+              "RelativeToolTip": "yummyAppVentaApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:05:51.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\appsettings.json",
+              "RelativeDocumentMoniker": "yummyAppVentaApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\yummyAppVentaApi\\appsettings.json",
+              "RelativeToolTip": "yummyAppVentaApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-24T05:05:40.524Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 524,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Details.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\ManVenta\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Details.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\ManVenta\\Details.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T21:14:08.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Delete.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\ManVenta\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Delete.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\ManVenta\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T20:46:24.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Edit.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\ManVenta\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Edit.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\ManVenta\\Edit.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T11:49:35.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Create.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\ManVenta\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Create.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\ManVenta\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T10:35:23.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Program.cs",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Program.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Program.cs",
+              "RelativeToolTip": "YummyProjectDSW\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T10:28:25.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Models\\Usuario.cs",
+              "RelativeToolTip": "YummyProjectDSW\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T10:04:19.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Models\\Venta.cs",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Models\\Venta.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Models\\Venta.cs",
+              "RelativeToolTip": "YummyProjectDSW\\Models\\Venta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:18:42.108Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
-              "ToolTip": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-22T15:59:05.709Z",
+              "Title": "ManVentaController.cs",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Controllers\\ManVentaController.cs",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Controllers\\ManVentaController.cs",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Controllers\\ManVentaController.cs",
+              "RelativeToolTip": "YummyProjectDSW\\Controllers\\ManVentaController.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAAwKQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T05:09:08.721Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Index.cshtml",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Views\\ManVenta\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\Views\\ManVenta\\Index.cshtml",
+              "RelativeToolTip": "YummyProjectDSW\\Views\\ManVenta\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAFEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-24T05:07:07.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\appsettings.json",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\appsettings.json",
+              "ToolTip": "C:\\Users\\Jacobo\\Desktop\\YUMMY ULTIMO\\ADSUsuarioApi\\YummyProjectDSW\\appsettings.json",
+              "RelativeToolTip": "YummyProjectDSW\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-24T05:10:36.269Z"
             }
           ]
         }

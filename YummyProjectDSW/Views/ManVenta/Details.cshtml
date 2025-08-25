@@ -1,0 +1,42 @@
+﻿@model yummyApp.Models.Venta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Venta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            ID Usuario
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idUsuario)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha de venta
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fechaVenta)
+        </dd>
+        @* <dt class = "col-sm-2">
+            Estado
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estado)
+        </dd> *@
+        <dt class = "col-sm-2">
+            Usuario
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.idVenta">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>
