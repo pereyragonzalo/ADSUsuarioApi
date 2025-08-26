@@ -3,12 +3,7 @@ using System.Diagnostics;
 using yummyApp.Models;
 
 using Microsoft.Data.SqlClient;
-
-using Microsoft.AspNetCore.Mvc;
-using yummyApp.Models;
 using System.Data;
-using Microsoft.Data.SqlClient;
-
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -31,10 +26,10 @@ namespace yummyApp.Controllers
             return View();
         }
 
-        public IActionResult ManGeneralEstilado()
-        {
-            return View();
-        }
+        //public IActionResult ManGeneralEstilado()
+        //{
+           // return View();
+       // }
 
         public IActionResult ManGeneral()
         {

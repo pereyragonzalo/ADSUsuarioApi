@@ -16,7 +16,7 @@
                 <a asp-controller="ManVenta" asp-action="" class="list-group-item list-group-item-action">
                     🧾 Mantenimiento de ventas
                 </a>
-                <a asp-action="" class="list-group-item list-group-item-action">
+                @*<a asp-action="" class="list-group-item list-group-item-action">
                     📋 Mantenimiento de los detalles de las ventas
                 </a>
                 <a asp-action="" class="list-group-item list-group-item-action">
@@ -24,7 +24,10 @@
                 </a>
                 <a asp-action="" class="list-group-item list-group-item-action">
                     🍽️ Mantenimiento de la categoría Comida
-                </a>
+                </a>*@
+            <a asp-controller="Reportes" asp-action="Resumen" class="list-group-item list-group-item-action">
+                🧾 Generar Reportes
+            </a>
             </div>
         </div>
         <div class="card-footer text-muted text-end">

@@ -20,11 +20,14 @@ namespace yummyApp.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+
+        public LoginModel(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
+            _userManager = userManager;
             _logger = logger;
         }
 
@@ -82,6 +85,9 @@ namespace yummyApp.Areas.Identity.Pages.Account
             /// </summary>
             [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
+
+            [Display(Name = "Soy Administrador")]
+            public bool IsAdmin { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -112,10 +118,27 @@ namespace yummyApp.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(Url.Action("ManGeneral", "Home"));
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+
+                    if (Input.IsAdmin && await _userManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        _logger.LogInformation("Admin user logged in.");
+                        return LocalRedirect("~/Home/ManGeneral"); // Redirige a la página de administrador
+                    }
+                    else if (!Input.IsAdmin && await _userManager.IsInRoleAsync(user, "User"))
+                    {
+                        _logger.LogInformation("Regular user logged in.");
+                        return LocalRedirect("~/Home/TiendaGeneral"); // Redirige a la página de usuario
+                    }
+                    else
+                    {
+                        await _signInManager.SignOutAsync();
+                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                        return RedirectToPage("./Login"); // Redirige a la página de login para un estado limpio
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

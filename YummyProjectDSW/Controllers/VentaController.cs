@@ -1,41 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using yummyApp.Models;
-
 using Microsoft.Data.SqlClient;
-
 using System.Data;
+using Microsoft.AspNetCore.Identity;
 
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 
 namespace yummyApp.Controllers
 {
 
     public class VentaController : Controller
     {
-        public VentaController(IConfiguration config)
+        private readonly IConfiguration _config;
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public VentaController(IConfiguration config, UserManager<IdentityUser> userManager)
         {
             _config = config;
+            _userManager = userManager;
         }
 
-        private readonly IConfiguration _config;
-
-
-
-
-        public void registrarVenta(List<ProductoCarrito> carrito, SqlConnection cn, SqlTransaction tx)
+        public int registrarVenta(List<ProductoCarrito> carrito, SqlConnection cn, SqlTransaction tx)
         {
-            var total = (decimal)0.0;
-            foreach (var c in carrito)
+            var idUsuario = _userManager.GetUserId(User);
+
+            using (SqlCommand cmd = new SqlCommand("registrar_venta", cn, tx))
             {
-                total += (c.precio) * ((decimal)c.cantidad);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idusuario", idUsuario);
+
+                var idVenta = Convert.ToInt32(cmd.ExecuteScalar());
+                return idVenta;
             }
-            
-            SqlCommand cmd = new SqlCommand("registrar_venta", cn, tx);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@precio", total);
-            cmd.ExecuteNonQuery();
 
         }
 
@@ -49,14 +44,14 @@ namespace yummyApp.Controllers
 
                     cmd.Parameters.AddWithValue("@id", p.id_producto);
                     cmd.Parameters.AddWithValue("@cantidad", p.cantidad);
-                    
+
                     cmd.ExecuteNonQuery();
                 }
             }
 
         }
 
-        public void registrarDetallesVenta(List<ProductoCarrito> carrito, SqlConnection cn, SqlTransaction tx)
+        public void registrarDetallesVenta(List<ProductoCarrito> carrito, SqlConnection cn, SqlTransaction tx, int idVenta)
         {
             foreach (var p in carrito)
             {
@@ -67,7 +62,7 @@ namespace yummyApp.Controllers
                     cmd.Parameters.AddWithValue("@id", p.id_producto);
                     cmd.Parameters.AddWithValue("@cantidad", p.cantidad);
                     cmd.Parameters.AddWithValue("@precio", p.precio);
-                    cmd.Parameters.AddWithValue("@subtotal", p.precio * (decimal)p.cantidad);
+                    cmd.Parameters.AddWithValue("@idventa", idVenta);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -77,7 +72,7 @@ namespace yummyApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmarCompra1(List<ProductoCarrito> carrito)
+        public IActionResult ConfirmarCompra(List<ProductoCarrito> carrito)
         {
             using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
             {
@@ -87,9 +82,9 @@ namespace yummyApp.Controllers
                 try
                 {
                     // Ejecutar cada operación dentro de la transacción
-                    registrarVenta(carrito, cn, tx);
+                    int idVenta = registrarVenta(carrito, cn, tx);
                     alterarProducto(carrito, cn, tx);
-                    registrarDetallesVenta(carrito, cn, tx);
+                    registrarDetallesVenta(carrito, cn, tx, idVenta);
 
                     // Confirmar cambios
                     tx.Commit();
@@ -97,28 +92,14 @@ namespace yummyApp.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Revertir todo si algo falla
                     tx.Rollback();
-                    // Puedes registrar el error o mostrar un mensaje
                     return StatusCode(500, $"Error al confirmar la compra: {ex.Message}");
                 }
             }
         }
-
-        [HttpPost]
-        public IActionResult ConfirmarCompra(List<ProductoCarrito> carrito)
-        {
-            
-                    return RedirectToAction("CompraFinalizada");
-                
-        }
-
         public IActionResult CompraFinalizada()
         {
             return View();
         }
-
     }
-
 }
-

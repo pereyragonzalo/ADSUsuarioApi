@@ -26,7 +26,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireLowercase = false;
     options.SignIn.RequireConfirmedAccount = false;
 })
+.AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+//CONFIGURACION PARA MANEJODE ROLES EN EL LOGIN
+
 
 // =====================================================================
 

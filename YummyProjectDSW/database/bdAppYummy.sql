@@ -1,4 +1,4 @@
-Create database bdAppYummy
+ï»¿Create database bdAppYummy
 go
 
 use bdAppYummy
@@ -6,51 +6,54 @@ go
 
 -- Tabla: CategoriaComida
 CREATE TABLE CategoriaComida (
-    idCategoriaComida INT PRIMARY KEY IDENTITY(1,1),
-    nombreCategoriaComida VARCHAR(100) NOT NULL,
-    estado int NOT NULL
+Â  Â  idCategoriaComida INT PRIMARY KEY IDENTITY(1,1),
+Â  Â  nombreCategoriaComida VARCHAR(100) NOT NULL,
+Â  Â  estado int NOT NULL
 );
+go
 
 -- Tabla: CategoriaOrigen
 CREATE TABLE CategoriaOrigen (
-    idCategoriaOrigen INT PRIMARY KEY IDENTITY(1,1),
-    nombreCategoriaOrigen VARCHAR(100) NOT NULL,
-    estado int NOT NULL
+Â  Â  idCategoriaOrigen INT PRIMARY KEY IDENTITY(1,1),
+Â  Â  nombreCategoriaOrigen VARCHAR(100) NOT NULL,
+Â  Â  estado int NOT NULL
 );
+go
 
 -- Tabla: Producto
 CREATE TABLE Producto (
-    idProducto INT PRIMARY KEY IDENTITY(1,1),
-    nombreProducto VARCHAR(100) NOT NULL,
-    precioProd DECIMAL(10,2) NOT NULL,
+Â  Â  idProducto INT PRIMARY KEY IDENTITY(1,1),
+Â  Â  nombreProducto VARCHAR(100) NOT NULL,
+Â  Â  precioProd DECIMAL(10,2) NOT NULL,
 	stockProd int NOT NULL,
-    idCategoriaOrigen INT NOT NULL,
-    idCategoriaComida INT NOT NULL,
-    estado int NOT NULL,
-    FOREIGN KEY (idCategoriaOrigen) REFERENCES CategoriaOrigen(idCategoriaOrigen),
-    FOREIGN KEY (idCategoriaComida) REFERENCES CategoriaComida(idCategoriaComida)
+Â  Â  idCategoriaOrigen INT NOT NULL,
+Â  Â  idCategoriaComida INT NOT NULL,
+Â  Â  estado int NOT NULL,
+Â  Â  FOREIGN KEY (idCategoriaOrigen) REFERENCES CategoriaOrigen(idCategoriaOrigen),
+Â  Â  FOREIGN KEY (idCategoriaComida) REFERENCES CategoriaComida(idCategoriaComida)
 );
+go
 
 -- Tabla: Venta
 CREATE TABLE Venta (
-    idVenta INT PRIMARY KEY IDENTITY(1,1),
-    idUsuario NVARCHAR(450), -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers. En la version final dejarlo como NOT NULL
-    fechaVenta DATETIME DEFAULT GETDATE(),
-	total decimal(10,2),
-    estado int NOT NULL,
+Â  Â  idVenta INT PRIMARY KEY IDENTITY(1,1),
+Â  Â  idUsuario NVARCHAR(450), -- mantener el tipo de dato a NVARCHAR(450) para referenciar el Id de AspNetUsers. En la version final dejarlo como NOT NULL
+Â  Â  fechaVenta DATETIME DEFAULT GETDATE(),
+Â  Â  estado int NOT NULL
 );
+go
 
 -- Tabla: DetalleVenta
 CREATE TABLE DetalleVenta (
-    idDetalleVenta INT PRIMARY KEY IDENTITY(1,1),
-    idVenta INT NOT NULL,
-    idProducto INT NOT NULL,
-    cantidad INT NOT NULL,
-    precioProd DECIMAL(10,2) NOT NULL,
-    subtotal AS (cantidad * precioProd) PERSISTED,
-    estado int NOT NULL,
-    FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
-    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+Â  Â  idDetalleVenta INT PRIMARY KEY IDENTITY(1,1),
+Â  Â  idVenta INT NOT NULL,
+Â  Â  idProducto INT NOT NULL,
+Â  Â  cantidad INT NOT NULL,
+Â  Â  precioProd DECIMAL(10,2) NOT NULL,
+Â  Â  subtotal AS (cantidad * precioProd) PERSISTED,
+Â  Â  estado int NOT NULL,
+Â  Â  FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
+Â  Â  FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
 )
 go
 
@@ -81,6 +84,14 @@ go
 
 -- Insertar datos
 
+--IMPORTANTE AGREGAR A LA TABLA ROLES PARA QUE JALE LA DATA AL CREAR NUEVO USUARIO
+INSERT INTO AspNetRoles (Id, Name, NormalizedName)
+VALUES (NEWID(), 'User', 'USER');
+GO
+INSERT INTO AspNetRoles (Id, Name, NormalizedName)
+VALUES (NEWID(), 'Admin', 'ADMIN');
+GO
+
 -- Insertar datos en CategoriaOrigen
 INSERT INTO CategoriaOrigen (nombreCategoriaOrigen) VALUES 
 ('Italiana'),
@@ -97,7 +108,7 @@ go
 
 INSERT INTO Producto (nombreProducto, precioProd, stockProd, idCategoriaOrigen, idCategoriaComida)
 VALUES 
-('Tiramisú', 18.50, 20, 1, 1),
+('TiramisÃº', 18.50, 20, 1, 1),
 ('Tacos al Pastor', 12.00, 50, 2, 2),
 ('Sushi Roll', 22.00, 30, 3, 2),
 ('Agua Mineral', 5.00, 100, 3, 3),
@@ -111,13 +122,31 @@ INSERT INTO Venta (idUsuario) VALUES
 ('8980f024-b071-4f82-81f8-86374d0c029a') 
 GO
 
+CREATE OR ALTER TRIGGER TRG_insertarUsuario
+ON AspNetusers
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO Venta (idUsuario)
+    SELECT
+        i.Id
+    FROM
+        inserted i
+    INNER JOIN
+        AspNetUserRoles ur ON i.Id = ur.UserId
+    INNER JOIN
+        AspNetRoles r ON ur.RoleId = r.Id
+    WHERE
+        r.NormalizedName = 'USER';
+END;
+go
+
 INSERT INTO DetalleVenta (idVenta, idProducto, cantidad, precioProd)
 VALUES 
 (1, 1, 2, 18.50),
 (2, 2, 3, 12.00),
 (3, 3, 1, 22.00),
-(4, 4, 5, 5.00),
-(5, 5, 2, 25.00)
+(4, 4, 5, 5.00)
 go
 
 -- Procedimientos almacenado
@@ -142,13 +171,11 @@ BEGIN
 END
 GO
 
-
 create or alter proc usp_producto
 as
 select * from Producto
 where estado=1
 go
-
 
 CREATE OR ALTER PROCEDURE usp_merge_producto
     @nom VARCHAR(255),
@@ -181,16 +208,16 @@ CREATE or alter PROCEDURE usp_desactivar_producto
     @idProducto INT
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT OFF;
 
-    -- Verifica si el producto existe y está activo
+    -- Verifica si el producto existe y estÃ¡ activo
     IF EXISTS (
         SELECT 1
         FROM Producto
         WHERE idProducto = @idProducto AND estado = 1
     )
     BEGIN
-        -- Desactiva el producto de forma lógica
+        -- Desactiva el producto de forma lÃ³gica
         UPDATE Producto
         SET estado = 0
         WHERE idProducto = @idProducto;
@@ -198,6 +225,7 @@ BEGIN
 END
 GO
 
+--jacobo
 CREATE OR ALTER PROCEDURE [dbo].[usp_reporteVentas]
     @Desde DATETIME = NULL,
     @Hasta DATETIME = NULL
@@ -233,7 +261,6 @@ BEGIN
 END
 GO
 
-
 create or alter proc usp_catcomida
 as
 select * from CategoriaComida
@@ -246,7 +273,6 @@ select * from CategoriaOrigen
 where estado = 1
 go
 
---Proc Gonzalo
 create or alter proc ListarUsuarios
 as
 BEGIN
@@ -262,7 +288,6 @@ begin
 	select*from venta;
 end;
 go
-<<<<<<< HEAD
 
 create or alter proc alterar_producto
 @id int,
@@ -272,55 +297,6 @@ begin
 	select*from venta;
 end;
 go
-
-create or alter proc registrar_detalles_venta
-@id int,
-@cantidad int,
-@precio decimal(10,2),
-@subtotal decimal(10,2)
-as
-begin
-	insert into DetalleVenta (idProducto, cantidad, precioProd, subtotal)
-	values(@id,@cantidad,@precio, @subtotal)
-end;
-go
-
-
-
-=======
->>>>>>> branchJacobo
-
-create or alter proc alterar_producto
-@id int,
-@cantidad int
-as
-begin
-	select*from venta;
-end;
-go
-
-create or alter proc registrar_detalles_venta
-@id int,
-@cantidad int,
-@precio decimal(10,2),
-@subtotal decimal(10,2)
-as
-begin
-	insert into DetalleVenta (idProducto, cantidad, precioProd, subtotal)
-	values(@id,@cantidad,@precio, @subtotal)
-end;
-go
-
-
------------------------------------------
-
--- proc Jacobo
-
-
-
-USE [bdAppYummy]
-GO
-
 
 CREATE or alter PROC [dbo].[ListarVentas]
 AS
@@ -333,9 +309,6 @@ INNER JOIN AspNetUsers A ON V.idUsuario = A.Id
 WHERE estado=1
 go
 
-
-
-------------------------------------------------------
 CREATE or alter PROC [dbo].[ObtenerVentaPorID]
 (
     @Id INT
@@ -354,10 +327,6 @@ BEGIN
 END
 go
 
-
-
--------------------------------------------------------
-
 CREATE or alter PROC [dbo].[RegistrarVenta]
 (
     @idUsuario VARCHAR(450),
@@ -371,7 +340,6 @@ BEGIN
     SELECT SCOPE_IDENTITY()
 END
 go
------------------------------------------------------
 
 CREATE or alter PROC [dbo].[ActualizarVentas]
 (
@@ -387,8 +355,6 @@ SET
 WHERE idVenta = @Id
 go
 
---------------------------------------------------------
-
 CREATE or alter PROC [dbo].[EliminarVenta]
 (
 	@id INT
@@ -398,27 +364,6 @@ UPDATE Venta
 SET Estado = 0
 WHERE idVenta = @id
 go
-
---------------------------------------------------------
------ OJOOOOOOOO ELIMINAR
-
------------------------------------------------------------
--- ELIMINAR CUANDO EXISTA AspNetUsers
-
---CREATE TABLE Usuario (
---    Id NVARCHAR(450) PRIMARY KEY,
---    UserName NVARCHAR(256) NOT NULL,
---    Email NVARCHAR(256) NOT NULL
---);
-
-
---INSERT INTO Usuario (Id, UserName, Email) VALUES
---('user1', 'jlopez', 'jlopez@example.com'),
---('user2', 'mrojas', 'mrojas@example.com'),
---('user3', 'acastro', 'acastro@example.com'),
---('user4', 'pfernandez', 'pfernandez@example.com'),
---('user5', 'dvalverde', 'dvalverde@example.com');
-
 
 CREATE or alter PROC [dbo].[ListarUsuariosVentas]
 AS
@@ -430,7 +375,6 @@ BEGIN
 END
 go
 
-
 create or ALTER PROCEDURE [dbo].[ObtenerUsuarioPorID]
 (
     @Id NVARCHAR(450)
@@ -441,4 +385,74 @@ BEGIN
     FROM AspNetUsers
     WHERE Id = @Id
 END
+go
+
+--------------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE registrar_venta
+    @idusuario NVARCHAR(450)
+AS
+BEGIN
+    INSERT INTO Venta (idUsuario, fechaVenta)
+    VALUES (@idusuario, GETDATE());
+
+    SELECT SCOPE_IDENTITY() AS idVenta;
+END
+go
+
+CREATE OR ALTER PROCEDURE alterar_producto
+    @id INT,
+    @cantidad INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @stockActual INT;
+
+    -- Obtener el stock actual del producto
+    SELECT @stockActual = stockProd
+    FROM Producto
+    WHERE idProducto = @id;
+
+    -- Verificar si el producto existe
+    IF @stockActual IS NULL
+    BEGIN
+        RAISERROR('Producto no encontrado.', 16, 1);
+        RETURN;
+    END
+
+    -- Caso: cantidad mayor al stock â†’ error
+    IF @cantidad > @stockActual
+    BEGIN
+        RAISERROR('La cantidad solicitada excede el stock disponible.', 16, 1);
+        RETURN;
+    END
+
+    ELSE IF @cantidad = @stockActual
+    BEGIN
+        UPDATE Producto
+        SET stockProd = 0,
+            estado = 0
+        WHERE idProducto = @id;
+    END
+
+    ELSE
+    BEGIN
+        UPDATE Producto
+        SET stockProd = stockProd - @cantidad
+        WHERE idProducto = @id;
+    END
+END;
+go
+
+create or alter proc registrar_detalles_venta
+@id int,
+@cantidad int,
+@precio decimal(10,2),
+@idventa int
+as
+begin
+	insert into DetalleVenta (idProducto, cantidad, precioProd, idVenta)
+	values(@id,@cantidad,@precio,@idventa)
+end;
 go
