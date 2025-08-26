@@ -1,24 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using QuestPDF.Fluent;
 using yummyApp.Dtos;
+using System.Text.Json;
 
 namespace yummyApp.Controllers
 {
     public class ReportesController : Controller
     {
         private readonly IConfiguration _config;
-        public ReportesController(IConfiguration config)
+        private readonly HttpClient _httpClient;
+
+        public ReportesController(IConfiguration config, HttpClient httpClient)
         {
             _config = config;
+            _httpClient = httpClient;
         }
 
         [HttpGet]
-        public IActionResult Index(DateTime? desde = null, DateTime? hasta = null)
+        public async Task<IActionResult> Index(DateTime? desde = null, DateTime? hasta = null)
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
-            var filas = listaVentasReporte(desde, hasta).ToList();
+            var filas = (await listaVentasReporte(desde, hasta)).ToList();
 
             var periodo = (desde.HasValue || hasta.HasValue)
                 ? $"{(desde.HasValue ? desde.Value.ToString("dd/MM/yyyy") : "inicio")} - {(hasta.HasValue ? hasta.Value.ToString("dd/MM/yyyy") : "hoy")}"
@@ -46,37 +49,52 @@ namespace yummyApp.Controllers
             return View(); // Views/Reportes/Resumen.cshtml
         }
 
-        IEnumerable<VentaResumenDto> listaVentasReporte(DateTime? desde = null, DateTime? hasta = null)
+        async Task<IEnumerable<VentaResumenDto>> listaVentasReporte(DateTime? desde = null, DateTime? hasta = null)
         {
-            List<VentaResumenDto> temporal = new List<VentaResumenDto>();
-            using (SqlConnection cn = new SqlConnection(_config["ConnectionStrings:DefaultConnection"]))
+            try
             {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("usp_reporteVentas", cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var apiUrl = $"{_config["ApiSettings:BaseUrl"]}/api/Reportes/ventas-resumen";
 
-                cmd.Parameters.AddWithValue("@Desde", desde ?? (object)DBNull.Value);
-                cmd.Parameters.AddWithValue("@Hasta", hasta ?? (object)DBNull.Value);
+                var queryParams = new List<string>();
+                if (desde.HasValue)
+                    queryParams.Add($"desde={desde.Value:yyyy-MM-dd}");
+                if (hasta.HasValue)
+                    queryParams.Add($"hasta={hasta.Value:yyyy-MM-dd}");
 
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                if (queryParams.Any())
+                    apiUrl += "?" + string.Join("&", queryParams);
+
+                var response = await _httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    temporal.Add(new VentaResumenDto()
+                    var jsonContent = await response.Content.ReadAsStringAsync();
+                    var apiResponse = JsonSerializer.Deserialize<ApiResponse>(jsonContent, new JsonSerializerOptions
                     {
-                        IdVenta = dr.GetInt32(0),
-                        NFactura = dr.GetInt32(1),
-                        Fecha = dr.GetDateTime(2),
-                        Cliente = dr.GetString(3),
-                        Vendedor = dr.GetString(4),
-                        Lineas = dr.GetInt32(5),
-                        Cantidad = dr.GetInt32(6),
-                        Total = dr.GetDecimal(7)
+                        PropertyNameCaseInsensitive = true
                     });
-                }
-                dr.Close();
-            }
 
-            return temporal;
+                    return apiResponse?.Ventas ?? new List<VentaResumenDto>();
+                }
+                else
+                {
+                    return new List<VentaResumenDto>();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log del error
+                return new List<VentaResumenDto>();
+            }
+        }
+
+        public class ApiResponse
+        {
+            public string Periodo { get; set; } = string.Empty;
+            public int TotalVentas { get; set; }
+            public decimal TotalIngresos { get; set; }
+            public int TotalItems { get; set; }
+            public List<VentaResumenDto> Ventas { get; set; } = new List<VentaResumenDto>();
         }
 
 

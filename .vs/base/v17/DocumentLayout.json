@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\",
+  "WorkspaceRootPath": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\Proyectos\\ADSUsuarioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|f:\\cibertec\\5 ciclo\\modulo2\\desarrolloservicioswebi\\adsusuarioapi\\yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{087815A7-ADD5-9E82-AA04-97E13E548B34}|yummyAppUsuarioApi\\yummyAppUsuarioApi.csproj|solutionrelative:yummyappusuarioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|f:\\cibertec\\5 ciclo\\modulo2\\desarrolloservicioswebi\\proyectos\\adsusuarioapi\\yummyprojectdsw\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F73876-F3BB-14F8-C647-B3C35C3CE454}|YummyProjectDSW\\yummyApp.csproj|solutionrelative:yummyprojectdsw\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeDocumentMoniker": "yummyAppUsuarioApi\\appsettings.json",
-              "ToolTip": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\ADSUsuarioApi\\yummyAppUsuarioApi\\appsettings.json",
-              "RelativeToolTip": "yummyAppUsuarioApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-22T15:59:05.709Z",
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\Proyectos\\ADSUsuarioApi\\YummyProjectDSW\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "YummyProjectDSW\\Controllers\\VentaController.cs",
+              "ToolTip": "F:\\Cibertec\\5 Ciclo\\Modulo2\\DesarrolloServiciosWebI\\Proyectos\\ADSUsuarioApi\\YummyProjectDSW\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "YummyProjectDSW\\Controllers\\VentaController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwGYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T00:30:09.559Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,70 @@
+﻿@model List<yummyApp.Models.ProductoCarrito>
+
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4 display-6 fw-bold text-primary">Carrito de Compras</h1>
+
+    @if (Model.Any())
+
+    {
+        <form asp-controller="Venta" asp-action="ConfirmarCompra" method="post">
+            <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                @Model[i].nombre
+                                <input type="hidden" name="carrito[@i].id_producto" value="@Model[i].id_producto" />
+                                <input type="hidden" name="carrito[@i].nombre" value="@Model[i].nombre" />
+                            </td>
+                            <td>
+                                @Model[i].precio.ToString("C")
+                                <input type="hidden" name="carrito[@i].precio" value="@Model[i].precio" />
+                            </td>
+                            <td>
+                                @Model[i].cantidad
+                                <input type="hidden" name="carrito[@i].cantidad" value="@Model[i].cantidad" />
+                            </td>
+                            <td>
+                                @(Model[i].precio * Model[i].cantidad)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-end mt-3">
+                <h5 class="me-3">Total general:</h5>
+                <h5 class="text-success fw-bold">
+                    @Model.Sum(p => p.precio * p.cantidad).ToString("C")
+                </h5>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-end">
+                <button type="submit" class="btn btn-success">
+                    Confirmar compra
+                </button>
+            </div>
+        </form>
+    }
+
+    else
+
+    {
+        <div class="alert alert-info text-center">
+            No hay productos en el carrito.
+        </div>
+    }
+</div>

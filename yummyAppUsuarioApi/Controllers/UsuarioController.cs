@@ -48,8 +48,21 @@ namespace yummyAppUsuarioApi.Controllers
 
             if (resultado.Succeeded)
             {
-                return Ok(new { mensaje = "Usuario registrado exitosamente" });
+                // Asigna el rol 'Admin' al usuario recién creado
+                var resultadoRoles = await _userManager.AddToRoleAsync(usuario, "Admin");
+
+                if (resultadoRoles.Succeeded)
+                {
+                    return Ok(new { mensaje = "Administrador registrado exitosamente" });
+                }
+                else
+                {
+                    // Si la asignación de rol falla, elimina el usuario que se creó
+                    await _userManager.DeleteAsync(usuario);
+                    return BadRequest(resultadoRoles.Errors);
+                }
             }
+
             // Si hay errores, los devolvemos en la respuesta
             return BadRequest(resultado.Errors);
         }
